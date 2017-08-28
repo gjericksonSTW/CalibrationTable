@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.chart.LineChart?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox alignment="CENTER" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Control.CalibrationControl">
+    <LineChart fx:id="CalibrationChart" title="T/V Relationship" VBox.vgrow="NEVER">
+        <xAxis>
+            <NumberAxis label="Voltage" side="BOTTOM" fx:id="xAxis" />
+        </xAxis>
+        <yAxis>
+            <NumberAxis fx:id="yAxis" label="Torque" side="LEFT" />
+        </yAxis>
+    </LineChart>
+    <HBox alignment="CENTER">
+        <Button fx:id="calibrationButton" alignment="CENTER" contentDisplay="CENTER" graphicTextGap="24.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="55.0" prefWidth="100.0" styleClass="orange_button" text="Calibrate" textAlignment="CENTER" VBox.vgrow="NEVER">
+          <VBox.margin>
+             <Insets bottom="25.0" top="5.0" />
+          </VBox.margin>
+         <HBox.margin>
+            <Insets bottom="25.0" right="25.0" />
+         </HBox.margin>
+        </Button>
+        <TextArea fx:id="infoBox" editable="false" focusTraversable="false" prefWidth="350.0">
+         <HBox.margin>
+            <Insets bottom="25.0" />
+         </HBox.margin></TextArea>
+      <VBox.margin>
+         <Insets />
+      </VBox.margin>
+    </HBox>
+</VBox>

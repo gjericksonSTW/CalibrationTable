@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.layout.*?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Tooltip?>
+<?import javafx.scene.text.Font?>
+<VBox id="Directory" fx:id="Directory" prefHeight="499.0" prefWidth="85.0" AnchorPane.bottomAnchor="0.0"
+      AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0"
+      xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Control.SidebarControl"
+      styleClass="sidebar">
+    <children>
+        <!--<ImageView fitHeight="60.4" fitWidth="72.0" layoutX="2.0">-->
+            <!--<image>-->
+                <!--<Image url="@../media/STS_logo.png"/>-->
+            <!--</image>-->
+        <!--</ImageView>-->
+        <Button fx:id="expand_ico" styleClass="sidebar, side_button" text="%fa.bars" textAlignment="JUSTIFY" layoutX="2.0">
+            <tooltip>
+                <Tooltip text="Expand">
+                </Tooltip>
+            </tooltip>
+            <VBox.margin>
+                <Insets top="20.0"/>
+            </VBox.margin>
+        </Button>
+        <Button fx:id="home_ico" styleClass="sidebar, side_button" text="%fa.home" textAlignment="JUSTIFY" visible="false">
+            <tooltip>
+                <Tooltip text="Home"></Tooltip>
+            </tooltip>
+            <VBox.margin>
+                <Insets top="10.0"/>
+            </VBox.margin>
+        </Button>
+        <Button fx:id="bt_ico" styleClass="sidebar, side_button" text="%fa.wrench" textAlignment="JUSTIFY" visible="false">
+            <tooltip>
+                <Tooltip text="Connections"></Tooltip>
+            </tooltip>
+            <VBox.margin>
+                <Insets top="10.0"/>
+            </VBox.margin>
+        </Button>
+        <Button fx:id="help_ico" styleClass="sidebar, side_button" text="%fa.question_circle_o" textAlignment="JUSTIFY" >
+            <tooltip>
+                <Tooltip text="Help"></Tooltip>
+            </tooltip>
+            <VBox.margin>
+                <Insets top="10.0"/>
+            </VBox.margin>
+        </Button>
+        <Button fx:id="sign_out_ico" styleClass="sidebar, side_button" text="%fa.sign_out" textAlignment="JUSTIFY" visible="false">
+            <tooltip>
+                <Tooltip text="Sign Out"></Tooltip>
+            </tooltip>
+            <VBox.margin>
+                <Insets top="10.0"/>
+            </VBox.margin>
+        </Button>
+    </children>
+    <padding>
+        <Insets top="5.0"/>
+    </padding>
+</VBox>
+

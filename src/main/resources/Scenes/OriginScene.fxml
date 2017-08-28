@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.text.*?>
+
+
+<AnchorPane fx:id="Origin" minHeight="350.0" minWidth="500.0" prefHeight="650.0" prefWidth="750.0"
+            stylesheets="@../css/Theme.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="Control.StageControl">
+    <children>
+        <Pane fx:id="sideBar" prefWidth="75.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0" AnchorPane.bottomAnchor="0.0">
+        </Pane>
+        <VBox AnchorPane.bottomAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.leftAnchor="75.0" AnchorPane.topAnchor="0.0">
+            <AnchorPane fx:id="titleBlock" layoutX="80.0" minWidth="250.0" prefWidth="400.0" snapToPixel="false">
+                <children>
+                    <HBox alignment="CENTER_LEFT" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
+                        <children>
+                            <ImageView fitHeight="50.0" fitWidth="50.0" AnchorPane.leftAnchor="0.0"
+                                       AnchorPane.topAnchor="0.0">
+                                <image>
+                                    <Image url="@../media/shell_ico.png"/>
+                                </image>
+                            </ImageView>
+                            <Text fx:id="headerText" text="text" wrappingWidth="250.0">
+                                <font>
+                                    <Font name="Futura" size="24"/>
+                                </font>
+                                <HBox.margin>
+                                    <Insets left="15.0" right="15.0"/>
+                                </HBox.margin>
+                            </Text>
+                        </children>
+                    </HBox>
+                    <Rectangle height="1.50" width="300.0" AnchorPane.bottomAnchor="-10.0" AnchorPane.leftAnchor="0.0" fill="white" />
+                    <VBox alignment="CENTER_RIGHT" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                        <children>
+                            <HBox alignment="CENTER_LEFT">
+                                <children>
+                                    <Circle fx:id="toolFlag" fill="orangered" radius="5" stroke="black" strokeWidth="2">
+                                    </Circle>
+                                    <Label text="Tool">
+                                        <padding>
+                                            <Insets left="8"/>
+                                        </padding>
+                                    </Label>
+                                </children>
+                            </HBox>
+
+                            <HBox alignment="CENTER_LEFT">
+                                <children>
+                                    <Circle fx:id="comFlag" fill="orangered" radius="5" stroke="black" strokeWidth="2">
+                                    </Circle>
+                                    <Label text="COM">
+                                        <padding>
+                                            <Insets left="8"/>
+                                        </padding>
+                                    </Label>
+                                </children>
+                            </HBox>
+                        </children>
+                    </VBox>
+                </children>
+            </AnchorPane>
+            <Pane fx:id="mWind" prefWidth="450.0" prefHeight="900.0" styleClass="center" VBox.vgrow="ALWAYS">
+            </Pane>
+        </VBox>
+    </children>
+</AnchorPane>

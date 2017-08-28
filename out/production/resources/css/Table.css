@@ -1,0 +1,56 @@
+.table-view {
+    -fx-background-color: transparent;
+}
+
+.table-view .column-header {
+    -fx-background-color: transparent;
+    -fx-size: 1;
+}
+
+.table-view .column-header-background {
+    -fx-background-color: transparent;
+}
+
+.table-view .table-cell {
+    -fx-background-color: transparent;
+    -fx-alignment: center;
+}
+
+.table-row-cell {
+    -fx-background-color: transparent;
+    -fx-alignment: center;
+}
+
+.table-row-cell:hover {
+    -fx-background-color: lightgray;
+}
+
+.table-view .filler {
+    -fx-background-color: transparent;
+}
+
+.table-view > .virtual-flow > .scroll-bar:vertical,
+.table-view > .virtual-flow > .scroll-bar:vertical > .track,
+.table-view > .virtual-flow > .scroll-bar:vertical > .track-background {
+
+    -fx-background-color: transparent;
+
+}
+
+.table-view > .virtual-flow > .scroll-bar > .thumb {
+    -fx-background-color: white;
+}
+
+.table-view > .virtual-flow > .scroll-bar > .decrement-button {
+     -fx-background-color: transparent;
+
+}
+
+.table-view > .virtual-flow > .scroll-bar > .decrement-arrow,
+.table-view > .virtual-flow > .scroll-bar > .increment-arrow,
+.table-view > .virtual-flow > .scroll-bar > .decrement-button,
+.table-view > .virtual-flow > .scroll-bar > .increment-button
+ {
+    -fx-background-color: transparent;
+    -fx-text-fill: transparent;
+}

@@ -1,0 +1,171 @@
+#Origin{
+    -fx-background-color: #dddddd;
+    -fx-text-fill: black;
+}
+
+#headerText {
+    -fx-font-family: "Futura Medium";
+}
+
+#titleBlock {
+    -fx-padding: 30;
+}
+
+.side_button {
+   -fx-font-family:'FontAwesome';
+   -fx-padding: 10 15 10 15;
+   -fx-text-fill: transparent;
+}
+
+.side_button .text{
+     -fx-stroke: white;
+     -fx-stroke-width: 1.5;
+}
+
+#expand_ico, #help_ico{
+    -fx-text-fill: white;
+    -fx-stroke-width: 0 !important;
+    -fx-stroke: transparent !important;
+}
+
+.side_button:hover{
+    -fx-background-color: #5d5d5d, #808285;
+    -fx-background-insets: -1 2 -1 -1, 2, 0, 0;
+    -fx-background-radius: 0;
+}
+
+#err{
+    -fx-text-fill: crimson;
+}
+
+.login {
+    -fx-padding: 25;
+}
+
+.green_button:pressed {
+    -fx-background-color: darkgrey;
+    -fx-text-fill: black;
+    -fx-border-width: 0!important;
+}
+
+.orange_button:pressed {
+    -fx-background-color: darkgrey;
+    -fx-text-fill: black;
+    -fx-border-width: 0!important;
+}
+
+.green_button:hover {
+    -fx-border-color: darkgreen;
+    -fx-border-width: 2;
+    -fx-text-fill: black;
+}
+
+.green_button {
+    -fx-background-color: #88BF50;
+    -fx-background-radius: 0;
+    -fx-font-size: 16;
+    -fx-text-fill: white;
+}
+
+.orange_button{
+    -fx-background-color: #DE8703;
+    -fx-background-radius: 0;
+    -fx-font-size: 16;
+    -fx-text-fill: white;
+}
+
+.orange_button:hover{
+    -fx-border-color: chocolate;
+    -fx-border-width: 2;
+    -fx-text-fill: black;
+}
+
+.orange_button:disabled{
+    -fx-background-color: darkgrey;
+}
+
+.red_button{
+    -fx-background-color: tomato;
+    -fx-background-radius: 0;
+    -fx-font-size: 16;
+    -fx-text-fill: white;
+}
+
+.red_button:hover {
+    -fx-border-color: maroon;
+    -fx-border-width: 2;
+    -fx-text-fill: black;
+}
+
+.red_button:disabled {
+    -fx-background-color: darkgrey;
+}
+
+.red_button:pressed {
+    -fx-background-color: darkgrey;
+    -fx-text-fill: black;
+    -fx-border-width: 0!important;
+}
+
+TextField {
+    -fx-background-color: gray , #fdfdfd ,  #fdfdfd;
+    -fx-background-radius: 0;
+    -fx-text-fill: black;
+    -fx-font-size: 16;
+}
+
+.password-field {
+    -fx-background-color: gray , #fdfdfd ,  #fdfdfd;
+    -fx-background-radius: 0;
+    -fx-text-fill: black;
+    -fx-font-size: 16;
+}
+
+.tooltip {
+    -fx-font-family: 'sans-serif';
+    -fx-font-weight: lighter;
+    -fx-font-size: 16;
+    -fx-font-style: normal;
+}
+
+.sidebar {
+    -fx-font-size: 40px;
+    -fx-alignment: TOP_CENTER;
+    -fx-background-color: #808285;
+}
+
+.label {
+    -fx-font-size: 16;
+}
+
+.chart-vertical-grid-lines {
+    -fx-stroke: darkgrey;
+    -fx-stroke-dash-array: 1;
+}
+
+.text-area .content{
+    -fx-background-color: #eeeeee;
+    -fx-fill: #dddddd;
+}
+
+.text-area {
+    -fx-background-insets: 0 0 0;
+}
+
+.text-area:focused{
+    -fx-background-color: transparent;
+}
+
+.chart-horizontal-grid-lines{
+    -fx-stroke: darkgrey;
+    -fx-stroke-dash-array: 1;
+}
+
+.chart-alternative-row-fill{
+    fx-fill: transparent;
+    fx-stroke: transparent;
+}
+
+.chart-plot-background {
+    -fx-background-color: transparent;
+}
