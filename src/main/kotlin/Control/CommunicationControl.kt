@@ -17,7 +17,6 @@ import javafx.scene.layout.HBox
 import javafx.scene.text.Text
 import javafx.util.Callback
 import utils.Bluetooth.ManualTool
-import utils.ValueChangeListener
 
 class CommunicationControl : Controller<Any>() {
 

@@ -17,7 +17,6 @@ import java.lang.reflect.InvocationTargetException
 
 import java.net.URL
 
-
 class StageControl : Controller<Any>() {
 
     companion object {
@@ -50,7 +49,6 @@ class StageControl : Controller<Any>() {
                 bScene.getController<StageControl>().updateCenter(fxmlLoader.getRoot<Pane>())
             }
         }
-
 
         fun connectionChanged(type: String){
             bScene.getController<StageControl>().updateFlag(type)

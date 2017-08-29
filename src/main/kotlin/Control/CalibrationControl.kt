@@ -10,6 +10,7 @@ import javafx.scene.chart.XYChart
 import javafx.scene.control.Button
 import javafx.scene.control.TextArea
 import utils.Bluetooth.MessageParser
+import utils.Certificate.CalibrationRecord
 
 class CalibrationControl : Controller<Any>() {
 

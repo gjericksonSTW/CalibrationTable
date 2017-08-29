@@ -38,7 +38,7 @@ class LDAP {
             disconnect()
         }
 
-        private fun searchAttr(env : Hashtable<Any, Any>, dir: ArrayList<String>){
+        private fun searchAttr(env : Hashtable<Any, Any>, dir: ArrayList<String>) {
             var ctx : LdapContext = InitialLdapContext(env, null)
             var namingEnum : NamingEnumeration<SearchResult> = ctx.search("ou=Employees,ou=STW", "(objectCategory=Person)", getSimpleSearchControls())
             while(namingEnum.hasMore()){
@@ -50,8 +50,28 @@ class LDAP {
             }
         }
 
+        private fun filterAttr(env : Hashtable<Any, Any>, name : String){
+            var ctx : LdapContext = InitialLdapContext(env, null)
+            var namingEnum : NamingEnumeration<SearchResult> = ctx.search("ou=Employees,ou=STW", "(&(objectCategory=Person)(sAMAccountName=${name.subSequence(10,name.lastIndex+1)}))", getSimpleSearchControls())
+            while(namingEnum.hasMore()){
+                var result : SearchResult = namingEnum.next()
+                var attrs : Attributes = result.attributes
+                var fullName = attrs.get("displayname").toString()
+                println(fullName)
+            }
+
+            namingEnum = ctx.search("ou=Employees,ou=STW", "(&(objectCategory=Group)(member=*))", getSimpleSearchControls())
+            while(namingEnum.hasMore()){
+                var result : SearchResult = namingEnum.next()
+                var attrs : Attributes = result.attributes
+                var dept = attrs.get("cn").toString()
+                println(dept)
+            }
+
+        }
+
         private fun getSimpleSearchControls () : SearchControls {
-            var searchControls : SearchControls = SearchControls()
+            var searchControls = SearchControls()
             searchControls.searchScope = SearchControls.SUBTREE_SCOPE
             searchControls.timeLimit = 30000
             return searchControls
@@ -66,7 +86,7 @@ class LDAP {
         }
 
         private fun connect( username: String,
-                        password: String ) :Boolean {
+                             password: String ) :Boolean {
             try {
                 var env: Hashtable<Any, Any> = Hashtable()
                 env.put(Context.INITIAL_CONTEXT_FACTORY, "com.sun.jndi.ldap.LdapCtxFactory")
@@ -79,6 +99,7 @@ class LDAP {
                     ctx = InitialDirContext(env)
                     println("Connected\r\n")
                     searchAttr(env, directory)
+                    filterAttr(env, username)
                     return true
                 }catch (e : AuthenticationNotSupportedException){
                     println(e)
@@ -100,7 +121,8 @@ class LDAP {
             return staticDir.contains(username)
         }
 
-        fun checkPassword(password: String, username: String):Boolean {
+        fun checkPassword(password: String, username: String) : Boolean {
+
             return connect("SHELLTECH\\$username", password)
         }
     }

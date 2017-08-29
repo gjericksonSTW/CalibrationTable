@@ -23,7 +23,6 @@ object ClassicBluetoothService {
 
     private var msg_flag : Boolean = false
     private var connected = true
-    private var mail : String = "W121444"
     private lateinit var t : Thread
 
     private var chosenDevice : RemoteDevice? = null
@@ -64,11 +63,17 @@ object ClassicBluetoothService {
         }
 
         override fun inquiryCompleted(discType: Int) {
-            println("Finished device discovery")
-            CommunicationControl.getControl().enableButton()
 
-            synchronized(lock) {
-                lock.notifyAll()
+            try {
+                println("Finished device discovery")
+                CommunicationControl.getControl().enableButton()
+
+                synchronized(lock) {
+                    lock.notifyAll()
+                }
+            }
+            catch (e : InterruptedException){
+                println(e)
             }
         }
 
@@ -113,12 +118,12 @@ object ClassicBluetoothService {
     }
 
     private fun startCommunication() : Thread = Thread {
+
         while (connected) {
             rx()
             if (msg_flag) {
-                tx(mail)
                 msg_flag = false
-                client
+
             }
         }
         t.join()
@@ -148,12 +153,6 @@ object ClassicBluetoothService {
                     CommunicationControl.getControl().connectedBluetooth()
                 })
 
-                try {
-                    m_os.write(mail.toByteArray())
-                }catch(e : IOException){
-                    println(e)
-                }
-
                 t.start()
 
             }, 1000)
@@ -182,8 +181,12 @@ object ClassicBluetoothService {
 
     private fun tx(msg: String){
 
-        m_os.write(msg.toByteArray())
-
+        try {
+            m_os.write(msg.toByteArray())
+        }
+        catch(e : Exception){
+            closeChannel()
+        }
     }
 
     private fun rx(){
@@ -209,6 +212,7 @@ object ClassicBluetoothService {
             host = stream?.acceptAndOpen()
         }catch (e : IOException){ }
         try{
+
             m_os = host!!.openDataOutputStream()
             m_is = host!!.openDataInputStream()
 
